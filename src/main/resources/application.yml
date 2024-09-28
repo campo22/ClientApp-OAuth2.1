@@ -1,21 +1,23 @@
 spring:
   security:
     oauth2:
-      resource-server:
+      resourceserver:
         jwt:
-          issuer-uri: "http://127.0.0.1:9090"
+          issuer-uri: "http://127.0.0.1:8080"
       client:
         registration:
           client-app:
             provider: spring
-            clientId: client-app
-            client-secret: "{noop}12345" # Asegúrate de usar {noop} si no has cifrado la contraseña
+            client-id: frontend-app
+            client-secret: 12345
             authorization-grant-type: authorization_code
-            redirect-uri: "http://127.0.0.1:8091/authorized"
+            redirect-uri: "http://127.0.0.1:8001/authorized"
             scope:
-              - openid
-              - profile
-              - read
+            - openid
+            - profile
+            - read
+            - write
+            client-name: client-app
         provider:
           spring:
-            issuer-uri: "http://127.0.0.1:9090"
+            issuer-uri: "http://127.0.0.1:8080"

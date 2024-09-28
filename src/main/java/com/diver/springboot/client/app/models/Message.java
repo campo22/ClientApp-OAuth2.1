@@ -1,14 +1,14 @@
-package com.diver.clientapp.Model;
+package com.diver.springboot.client.app.models;
 
 public class Message {
     private String text;
 
+    public Message() {
+
+    }
 
     public Message(String text) {
         this.text = text;
-    }
-
-    public Message() {
     }
 
     public String getText() {
